@@ -1,0 +1,121 @@
+/* RESET & CORE THEME */
+* { box-sizing: border-box; }
+body {
+    background-color: #020502;
+    color: #00ff41;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    overflow: hidden; /* Lock scroll for the OS feel */
+    height: 100vh;
+}
+
+/* THE CRT EFFECTS (True Creativity) */
+.crt-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+    z-index: 100;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.05));
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    z-index: 101;
+}
+
+/* LAYOUT CONTAINERS */
+#app { height: 100%; display: flex; align-items: center; justify-content: center; }
+.hidden { display: none !important; }
+
+/* TERMINAL BOX (Login & Dashboard) */
+.terminal-box, .container {
+    border: 1px solid #00ff41;
+    padding: 30px;
+    background: rgba(0, 20, 0, 0.9);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+    width: 95%;
+    max-width: 500px;
+    position: relative;
+}
+
+/* GLITCH TITLE */
+.glitch-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+/* FORM ELEMENTS */
+input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    padding: 12px;
+    margin: 10px 0;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #00ff41;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover { background: #fff; color: #000; box-shadow: 0 0 10px #fff; }
+
+/* DASHBOARD SPECIFICS */
+#dashboard {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+}
+
+.top-nav {
+    display: flex; justify-content: space-between;
+    padding: 15px; border-bottom: 1px solid #00ff41;
+}
+
+.bell-icon { cursor: pointer; position: relative; font-size: 1.5rem; }
+.badge {
+    background: red; color: white; border-radius: 50%;
+    padding: 2px 6px; font-size: 0.6rem;
+    position: absolute; top: 0; right: -5px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+.content-grid { display: flex; flex: 1; overflow: hidden; }
+.sidebar { width: 120px; border-right: 1px solid #00ff41; padding: 10px; }
+.nav-item { background: none; color: #00ff41; border: none; text-align: left; padding: 10px 0; font-size: 0.7rem; }
+.nav-item.active { text-decoration: underline; }
+
+.terminal-window { flex: 1; padding: 20px; overflow-y: auto; font-size: 0.85rem; line-height: 1.6; }
+.danger { color: #ff3e3e; font-weight: bold; }
+
+/* MODAL / LEAK WINDOW */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 200;
+}
+
+.modal-content {
+    border: 2px dashed #ffcc00; color: #ffcc00;
+    padding: 30px; max-width: 400px; background: #111;
+    text-align: center;
+}
+
+.buy-btn { background: #ffcc00; color: #000; margin-top: 20px; }
